@@ -1,0 +1,9 @@
+[book]
+authors = ["Venkateshwaran-32"]
+language = "en"
+src = "src"
+title = "Voice Procedure"
+
+[output.html]
+additional-css = ["chatbot.css"]
+additional-js = ["chatbot.js"]

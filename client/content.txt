@@ -1,0 +1,373 @@
+Topic 1 initiate call : 
+
+<Learn 01 - Initiate Call>
+The prowords are... HULLO, CHARLIE CHARLIE, MESSAGE, WILCO, ROGER, OVER, OUT.
+
+Start a call by...
+HULLO TargetCallsign, this is OwnCallsign, MESSAGE, OVER.
+
+HULLO - Initiate new call
+MESSAGE - Alert users to be ready for a new message
+WILCO - Will comply after receiving instruction
+ROGER - Received all the last transmission
+OVER - Finished talking, waiting for reply
+OUT - Finished talking, end of transmission
+
+For Initiating a Single Call...
+Example:
+HULLO 00, this is 10, MESSAGE, OVER.
+
+For Initiating a Multiple Call, you need to include AND for each respective station
+Example:
+HULLO 20 and 30 and 40, thus is 10, MESSAGE, OVER.
+
+For Initiating a Collective Call, you need to include CHARLIE CHARLIE.
+Example:
+HULLO CHARLIE CHARLIE BRAVO, this is 10, MESSAGE, OVER.
+
+For Initiating a All Stations Call, you need to include the Net Identification Sign.
+Example:
+HULLO all stations DELTA FOXTROT, this is 10, MESSAGE, OVER.
+
+TOPIC 2  ANSWER CALL 
+
+<Learn 02 - Answer Call>
+The prowords are... SEND, ROGER, WILCO, OVER, WAIT (< 5s), WAIT-OUT (> 5s), OUT.
+
+Answer a call by...
+Own Callsign, SEND, OVER.
+
+Example:
+00, SEND, OVER.
+00, ROGER, OVER.
+00, ROGER, OUT.
+00, WILCO, OVER.
+00, WAIT (< 5s)... OVER.
+00, WAIT OUT (> 5s) .... Need to re-initiate a call again
+00, WILCO, OUT.
+
+NOTE: Generally, the station who initiated a call will terminate the call by using the proword OUT.
+
+TOPIC 3 
+
+<Learn 03 - Radio Check and Signal Strength>
+The prowords are...
+RADIO CHECK (comms status btw initiating station and sub-stations),
+SIGNAL STRENGTH (comms status btw sub-stations),
+OK (Loud and Clear),
+DIFFICULT (Comms is workable with difficulty. Care and extra measures are needed),
+NOTHING HEARD (not receiving reply),
+INTERFERENCE (Received with disturbance from other transmitting station),
+DISTORTION (Received with noises),
+INTERMITTENT (Signal fading at intervals - loud and weak).
+
+HINT: Proword DIFFICULT to be used with proword INTERFERENCE, DISTORTION, or INTERMITTENT.
+NOTE: To be used during comms trial and NOT during operation as it might compromise security.
+
+Example:
+HULLO all station AB, this is 00, RADIO CHECK OVER.
+10, OK, OVER.
+20, DIFFICULT with INTERFERENCE, OVER.
+30, OK, OVER.
+
+00, 20 DIFFICULT with DISTORTION, SIGNAL STRENGTH, OVER.
+10, OK, OUT.
+20, OK, OUT.
+30, 20 DIFFICULT with INTERMITTENT, OUT.
+00, OK, OUT.
+
+<Learn 04 - Long Message>
+The prowords are... LONG MESSAGE, ROGER SO FAR. Use it to break the message that take more than 30s to send into parts.
+
+Example:
+HULLO 10, this is 00, LONG MESSAGE OVER.
+10, SEND OVER.
+00, 5 enemy tanks, and 10 armoured wheeled vehicles, and 15 motorcycles spotted harbouring at GRID ABCD, ROGER SO FAR OVER.
+10, ROGER, OVER.
+00, they will be advancing towards SUSAN, prepare to ambush them there, OVER.
+10, ROGER, OVER.
+
+<Learn 05 - Readback Message>
+The prowords are... READBACK MESSAGE, READBACK, CORRECT, WRONG, I READBACK
+
+Example:
+HULLO 10 and 20, this is 00, READBACK MESSAGE OVER.
+10, SEND, OVER.
+20, SEND, OVER.
+00, enemy tanks spotted at GRID ABCD 10 READBACK, OVER.
+10, enemy spotted at GRID ABCD OVER.
+00, WRONG enemy tanks, OVER.
+10, enemy tanks, OVER.
+00, CORRECT OUT.
+10, ROGER OUT.
+20, ROGER OUT.
+
+A receiving station can initiate to READBACK a message if it is not requested by the transmitting station.
+
+Example:
+10, I READBACK enemy tanks spotted at GRID ABCD, OVER.
+
+<Learn 06 - Matrix Message>
+The prowords are... MATRIX MESSAGE, or MATRIX 1/2/3/n MESSAGE (if more than 1 table is available)
+
+Example:
+HULLO 10 and 20, this is 00, MATRIX MESSAGE OVER.
+or
+HULLO 10 and 20, this is 00, MATRIX 2 MESSAGE OVER.
+10, SEND, OVER.
+20, SEND, OVER.
+00, meet me at ZU, BQ, DO, RY hours at PE, OVER.
+10, WILCO, OUT.
+20, WILCO, OUT.
+
+<Learn 07 - Formal Message>
+A Formal Message is an authorised message form that may be transmitted over the air.
+
+Formal Message has 3 parts:
+
+- HEADING (Precedence Action, Precedence Info, DTG, From, To, Info)
+- TEXT (Security Classification, Originator no., Message)
+- ENDING (For Operator administration only, need not transmit over the air)
+
+The prowords are...
+
+- FORMAL MESSAGE,
+- BREAK x 2 (for end of HEADING, and end of TEXT),
+- ROGER SO FAR x 1 or 2 (for HEADING, and TEXT that may take more than 30s to send).
+
+Example:
+HULLO B19, C59, and D89, this is A00, PRIORITY FORMAL MESSAGE OVER.
+
+B19/C59/D89, SEND OVER.
+
+A00, PRIORITY ROUTINE 160900H JUL 06 from A19 to B19 and C59 info D89 BREAK, ROGER SO FAR OVER.
+
+Note: Above Precedence PRIORITY (For action addressee B19, C59), ROUTINE (For info addressee D89).
+
+B19/C59/D89, ROGER OVER.
+
+A00, RESTRICTED, Quebec oblique 006. resupply will be reaching your harbour locations at 171800H and depart at 172000H, ROGER SO FAR OVER.
+
+B19/C59/D89, ROGER OVER.
+
+A00, prepare your MOLAR to for resupply BREAK, OVER.
+
+B19/C59/D89, ROGER OUT.
+
+Precedence Category:
+FLASH (Less than 10 mins), IMMEDIATE (Up to 1 hour), PRIORITY (Up to 6 hours), ROUTINE (24 hours)
+
+Security Classification:
+TOP SECRET, SECRET, CONFIDENTIAL, RESTRICTED, UNCLASSIFIED
+
+<Learn 08 - Cancellation>
+The proword is CANCEL.
+
+Example:
+Cancellation During Transmission
+HULLO 00, this is 10, enemy tanks spotted at GRID ABCD CANCEL OVER.
+
+Cancellation After Transmission.
+HULLO 00, this is 10, reference message enemy tanks CANCEL OVER.
+00, ROGER OVER.
+
+<Learn 09 - Correction>
+The proword is WRONG.
+
+Example:
+Cancellation During Transmission: If the sender wishes to correct a word or phrase that he has just spoken, he uses the proword "WRONG" followed immediately by the last correct word or phrase before the mistake and then the correct version.
+
+HULLO 00, this is 10, enemy tanks spotted at GRID ABBD, WRONG GRID ABCD, OVER.
+
+Cancellation After Transmission: If a station has sent a message and later realises that a mistake has been made, he calls the stations concerned and after referring to the message, uses the proword "WRONG" to correct the part containing the error.
+
+HULLO 00, this is 10, reference my message on enemy tanks WRONG GRID ABCD OVER.
+
+<Learn 10 - Verify>
+The prowords are... VERIFY, CORRECT, WRONG.
+
+Example:
+Verify During Transmission:
+
+HULLO 00, this is 10, enemy tanks spotted at GRID ABBD, OVER.
+00, VERIFY GRID ABCD over.
+10, WRONG, GRID ABBD OVER.
+Note: Say the proword WRONG followed immediately by a last correct word before the mistake and a correct version.
+00, ROGER OVER.
+
+Verify After Transmission:
+
+HULLO 10, this is 00, reference message enemy tanks VERIFY GRID ABBD, OVER.
+10, GRID ABBD CORRECT OVER.
+Note: Quote the CORRECT WORDS followed immediately by proword CORRECT.
+00, ROGER OVER.
+
+<Learn 11 - Repetition>
+The prowords are... I SAY AGAIN, SAY AGAIN, SAY AGAIN WORD AFTER, SAY AGAIN WORD BEFORE, SAY AGAIN ALL AFTER, SAY AGAIN ALL BEFORE, SAY AGAIN FROM... TO... .
+
+Example:
+10, enemy tanks spotted at GRID ABBD, I SAY AGAIN GRID ABBD, OVER. (This is to emphasize).
+
+00, SAY AGAIN over. (10, enemy tanks spotted at GRID ABBD OVER)
+
+00, SAY AGAIN WORD BEFORE TANKS OVER. (10, ENEMY TANKS OVER.)
+
+00, SAY AGAIN WORD AFTER TANKS OVER. (10, TANKS SPOTTED OVER.)
+
+00, SAY AGAIN ALL BEFORE GRID OVER. (10, enemy tanks spotted at GRID OVER.)
+
+00, SAY AGAIN ALL AFTER TANKS OVER. (10, TANKS SPOTTED AT GRID ALPHA BRAVO BRAVO DELTA OVER.)
+
+00, SAY AGAIN FROM tanks TO GRID. (10, tanks spotted at GRID OVER.)
+
+<Learn 12 - Acknowledge>
+The prowords are... ACKNOWLEDGE, NOTHING HEARD OUT.
+
+Examples:
+HULLO 20 and 30, this is 10, MESSAGE OVER.
+20, SEND OVER. (after 5s paused)
+10, enemy tanks spotted at GRID ABBD, OVER.
+20, ROGER OVER.
+HULLO 30, this is 10, reference my message to callsign 20, ACKNOWLEDGE OVER.
+30, WILCO OVER.
+10, ROGER OUT.
+
+Failure to Acknowledge:
+Hullo 30, this is 10 MESSAGE OVER. (x2)
+Hullo 30, this is 10, ACKNOWLEDGE OVER.
+10, 30 NOTHING HEARD OUT.
+
+<Learn 13 - Relay>
+The prowords are... RELAY TO, FROM, MESSAGE PASSED, THROUGH ME, RELAY THROUGH.
+
+Example 1:
+Station 10 asked station 20 to relay to station 30.
+HULLO 20, this is 10, RELAY TO 30, move now OVER.
+20, ROGER OUT to you... HULLO 30, this is 20, FROM 10, move now OVER.
+30, WILCO OUT.
+HULLO 10, this is 20, MESSAGE PASSED OUT.
+
+Example 2:
+Third station volunteer to do relay:
+HULLO 10, this is 20, THROUGH ME, OVER.
+10, RELAY TO 30, move now, OVER.
+20, ROGER OUT to you... Hullo 30, this is 20, FROM 10, move now, OVER.
+30, WILCO, OUT.
+HULLO 10, this is 20, MESSAGE PASSED OUT.
+
+Example 3:
+Control(00) tells station 10 to RELAY THROUGH station 20.
+Hullo 10, this is 00, RELAY THROUGH 20, OVER.
+10, ROGER OUT to you... HULLO 20, this is 10, RELAY TO 30, move now, OVER.
+20, ROGER OUT to you... HULLO 30, this is 20, FROM 10 move now, OVER.
+30, WILCO, OUT.
+HULLO 10, this is 20, MESSAGED PASSED, OUT.
+
+<Learn 14 - Unknown Station>
+The prowords are UNKNOWN STATION, SAY AGAIN CALLSIGN.
+
+Example:
+HULLO 00, this is ...., MESSAGE OVER.
+UNKNOWN STATION, this is 00, SAY AGAIN CALLSIGN, OVER.
+HULLO 00, this is 10, MESSAGE, OVER.
+00, SEND, OVER.
+
+<Learn 15 - NO DUFF>
+The proword is NO DUFF.
+In peacetime exercises, there are genuine urgent message to be transmitted over an exercise net.
+
+Example:
+HULLO 00, this is 10, NO DUFF MESSAGE, OVER.
+00, SENT, OVER.
+10, NO DUFF man down, request for medical evacuation NO DUFF, over.
+
+NOTE: Messages sent under the cover of "NO DUFF" are still liable to be intercepted by a potential enemy. Where encryption is necessary, the word "NO DUFF" is not to be encrypted
+
+<Learn 16 - Nicknames and Authentication>
+The proword for Authentication are AUTHENTICATE, I AUTHENTICATE, WRONG OUT.
+(1) Nicknames are two words used by Signals for the purpose of activating five communication drills. They are (a) Changing of frequency, (b) Imposing of radio silence, (c) Breaking of radio silence, (d) Lifting of radio silence, (e) Closing down of a net.
+
+(2) When the two-words Nicknames is activated, (a) First station is to authenticate, (b) All Stations are to readback the Nicknames so as to acknowledge and comply with the communication drills, (c) lastly, the initiating Station will ack with the Nicknames followed by OUT to indicate the start of the communication drill.
+
+Example:
+HULLO all stations DELTA FOXTROT, this is A00, BLUE SPADE OVER.
+B19 wait... AUTHENTICATE Bravo Three OVER.
+A00 wait... I AUTHENTICATE Eight Three OVER.
+B19, roger BLUE SPADE OVER.
+C29, BLUE SPADE OVER.
+D39, BLUE SPADE OVER.
+A00, BLUE SPADE now, OUT.
+
+When the authentication is wrong, the initiating station will reply WRONG OUT.
+
+NOTE: Authentication is also used when (1) Joining a Working Net, (2) On a suspicious station
+
+<Voice Procedure Rules>
+They are:
+
+1. Security
+2. Accuracy
+3. Discipline.
+
+To learn more about:
+Security   type   learn security
+Accuracy   type   learn accuracy
+Discipline  type   learn discipline
+
+<Discipline>
+
+1. Discipline in voice procedures ensures that communications are conducted in an orderly and efficient manner. Irrespective of rank, the control station operator in charge of the net is responsible for its radio discipline.
+2. Radio discipline includes:
+a. Correct use of voice procedure
+b. Closing down and opening up of stations
+c. Use of correct frequency
+d. Constant radio watch by all stations on the net
+3. Only one station may speak at a time by following the rules:
+a. Listen out before speaking
+b. Leave a short pause (5 seconds) at the end of a conversation
+c. Answer all calls immediately in the order as specified in the Communicating Operating Instructions
+
+<Phonetic>
+The phonetic alphabets are:
+
+Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu
+
+<Appointment Titles>
+It is used to disguised the level at which the respective appointment holders are held, although it has no security value.
+
+The appointment titles are:
+
+1. SUNRAY - Commander
+2.MOONBEAM - Chief of Staff
+2. MANHOLE - Administration/Manpower/G1/S1 Staff Officer
+3. MOLAR - QM/Log/G4/S4 Staff Officer
+4. SHOTGUN - Armament Representative
+5. IRONSIDE - Armour Representative
+6. SHELDRAKE - Artillery Representative
+7. HOLDFAST - Engineer Representative
+8. CRACKER - FATA Representative
+9. FORTUNE - Forward Air Controller
+10. SEAGULL - Operation/G3/S3 Staff Officer
+11. BLUEBELL - Mechanical Repair Representative
+12. ACORN - Intelligence/G2/S2 Staff Officer
+13. PRONTO - Signal Representative
+14. WATCHDOG - Provost Representative
+15. PLAYTIME - Transport Representative
+16. STARLIGHT - Medical Representative
+17. RICKSHAW - Ordnance Representative
+18. CONTRACTOR - Movement Control Staff
+19. GLOWWORM - Ground Liaison Officer
+20. FOXHOUND - Infantry Representative
+21. SPYGLASS - Air Reconnaissance Representative
+22. BASEBALL - Air Traffic Representative
+23. CONROD - Air Representative
+24. NOMAD - Navigation Officer
+25. VESTMENT - Air Contact Officer
+26. OFFSET - Air Support Operation Officer
+27. ATOLL - Air Transport Operation Officer
+
+Note on Misuse of Appointment Titles:
+One title is not to be used to qualify another, or as an adjective.
+
+a. SUNRAY IRONSIDE should not be used.
+b. Referring to tanks as IRONSIDES, and artillery support as SHELLDRAKE SUPPORT etc.

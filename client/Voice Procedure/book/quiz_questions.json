@@ -1,0 +1,89 @@
+{
+  "initiate_call": {
+    "title": "Initiate Call",
+    "questions": [
+      {
+        "id": "initiate_call_q1",
+        "prompt": "Say the proword that means \"Will comply after receiving instruction\".",
+        "answer": "WILCO",
+        "required_points": [
+          "WILCO"
+        ]
+      },
+      {
+        "id": "initiate_call_q2",
+        "prompt": "Initiate a single call: callsign 10 calling 00. Say the full line.",
+        "answer": "HULLO 00, this is 10, MESSAGE, OVER.",
+        "required_points": [
+          "HULLO 00, this is 10, MESSAGE, OVER."
+        ]
+      },
+      {
+        "id": "initiate_call_q3",
+        "prompt": "Say what ROGER means.",
+        "answer": "ROGER means: received all of the last transmission.",
+        "required_points": [
+          "received all of the last transmission"
+        ]
+      }
+    ]
+  },
+  "answer_call": {
+    "title": "Answer Call",
+    "questions": [
+      {
+        "id": "answer_call_q1",
+        "prompt": "Answer a call using the standard format (use your own callsign as 00). Say the full line.",
+        "answer": "00, SEND, OVER.",
+        "required_points": [
+          "00, SEND, OVER."
+        ]
+      },
+      {
+        "id": "answer_call_q2",
+        "prompt": "Say the proword for a pause of less than 5 seconds.",
+        "answer": "WAIT",
+        "required_points": [
+          "WAIT"
+        ]
+      },
+      {
+        "id": "answer_call_q3",
+        "prompt": "Say the proword for a pause of more than 5 seconds.",
+        "answer": "WAIT OUT",
+        "required_points": [
+          "WAIT OUT"
+        ]
+      }
+    ]
+  },
+  "radio_check": {
+    "title": "Radio Check and Signal Strength",
+    "questions": [
+      {
+        "id": "radio_check_q1",
+        "prompt": "Say the proword used to check comms status between initiating station and sub-stations.",
+        "answer": "RADIO CHECK",
+        "required_points": [
+          "RADIO CHECK"
+        ]
+      },
+      {
+        "id": "radio_check_q2",
+        "prompt": "Say the proword used to check comms status between sub-stations.",
+        "answer": "SIGNAL STRENGTH",
+        "required_points": [
+          "SIGNAL STRENGTH"
+        ]
+      },
+      {
+        "id": "radio_check_q3",
+        "prompt": "You are callsign 20. Reply to a radio check: \"DIFFICULT with INTERFERENCE, OVER.\" Say the full line.",
+        "answer": "20, DIFFICULT with INTERFERENCE, OVER.",
+        "required_points": [
+          "20, DIFFICULT with INTERFERENCE, OVER."
+        ]
+      }
+    ]
+  }
+}
