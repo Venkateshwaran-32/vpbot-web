@@ -1,4 +1,3 @@
-Topic 1 initiate call : 
 
 <Learn 01 - Initiate Call>
 The prowords are... HULLO, CHARLIE CHARLIE, MESSAGE, WILCO, ROGER, OVER, OUT.
@@ -29,9 +28,8 @@ For Initiating a All Stations Call, you need to include the Net Identification S
 Example:
 HULLO all stations DELTA FOXTROT, this is 10, MESSAGE, OVER.
 
-TOPIC 2  ANSWER CALL 
-
 <Learn 02 - Answer Call>
+
 The prowords are... SEND, ROGER, WILCO, OVER, WAIT (< 5s), WAIT-OUT (> 5s), OUT.
 
 Answer a call by...
@@ -48,9 +46,8 @@ Example:
 
 NOTE: Generally, the station who initiated a call will terminate the call by using the proword OUT.
 
-TOPIC 3 
-
 <Learn 03 - Radio Check and Signal Strength>
+
 The prowords are...
 RADIO CHECK (comms status btw initiating station and sub-stations),
 SIGNAL STRENGTH (comms status btw sub-stations),
