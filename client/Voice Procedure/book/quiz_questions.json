@@ -85,5 +85,174 @@
         ]
       }
     ]
+  },
+  "long_message": {
+    "title": "Long Message",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "readback_message": {
+    "title": "Readback Message",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "matrix_message": {
+    "title": "Matrix Message",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "formal_message": {
+    "title": "Formal Message",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "cancellation": {
+    "title": "Cancellation",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "correction": {
+    "title": "Correction",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "verify": {
+    "title": "Verify",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "repetition": {
+    "title": "Repetition",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "acknowledge": {
+    "title": "Acknowledge",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "relay": {
+    "title": "Relay",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "unknown_station": {
+    "title": "Unknown Station",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "no_duff": {
+    "title": "NO DUFF",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
+  },
+  "nicknames_authentication": {
+    "title": "Nicknames and Authentication",
+    "questions": [
+      {
+        "id": "",
+        "prompt": "",
+        "answer": "",
+        "required_points": [
+
+        ]
+      }
+    ]
   }
 }
