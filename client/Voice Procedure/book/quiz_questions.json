@@ -90,11 +90,28 @@
     "title": "Long Message",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "long_message_q1",
+        "prompt": "Say the prowords used to break a message that takes more than 30 seconds.",
+        "answer": "LONG MESSAGE, ROGER SO FAR.",
         "required_points": [
-
+          "LONG MESSAGE",
+          "ROGER SO FAR"
+        ]
+      },
+      {
+        "id": "long_message_q2",
+        "prompt": "Start a long message call: callsign 00 to 10. Say the full line.",
+        "answer": "HULLO 10, this is 00, LONG MESSAGE OVER.",
+        "required_points": [
+          "HULLO 10, this is 00, LONG MESSAGE OVER."
+        ]
+      },
+      {
+        "id": "long_message_q3",
+        "prompt": "Say the proword the receiver uses to acknowledge part of a long message.",
+        "answer": "ROGER SO FAR.",
+        "required_points": [
+          "ROGER SO FAR"
         ]
       }
     ]
@@ -103,11 +120,27 @@
     "title": "Readback Message",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "readback_message_q1",
+        "prompt": "Say the proword a receiver uses to initiate a readback.",
+        "answer": "I READBACK.",
         "required_points": [
-
+          "I READBACK"
+        ]
+      },
+      {
+        "id": "readback_message_q2",
+        "prompt": "Request a readback message: callsign 00 to 10 and 20. Say the full line.",
+        "answer": "HULLO 10 and 20, this is 00, READBACK MESSAGE OVER.",
+        "required_points": [
+          "HULLO 10 and 20, this is 00, READBACK MESSAGE OVER."
+        ]
+      },
+      {
+        "id": "readback_message_q3",
+        "prompt": "Say the proword used to indicate a readback is incorrect.",
+        "answer": "WRONG.",
+        "required_points": [
+          "WRONG"
         ]
       }
     ]
@@ -116,11 +149,27 @@
     "title": "Matrix Message",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "matrix_message_q1",
+        "prompt": "Say the proword to start a matrix message when only one table is used.",
+        "answer": "MATRIX MESSAGE.",
         "required_points": [
-
+          "MATRIX MESSAGE"
+        ]
+      },
+      {
+        "id": "matrix_message_q2",
+        "prompt": "Say the proword to start a matrix message for table 2.",
+        "answer": "MATRIX 2 MESSAGE.",
+        "required_points": [
+          "MATRIX 2 MESSAGE"
+        ]
+      },
+      {
+        "id": "matrix_message_q3",
+        "prompt": "Start a matrix message: callsign 00 to 10 and 20. Say the full line.",
+        "answer": "HULLO 10 and 20, this is 00, MATRIX MESSAGE OVER.",
+        "required_points": [
+          "HULLO 10 and 20, this is 00, MATRIX MESSAGE OVER."
         ]
       }
     ]
@@ -129,11 +178,32 @@
     "title": "Formal Message",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "formal_message_q1",
+        "prompt": "Name the three parts of a Formal Message.",
+        "answer": "HEADING, TEXT, ENDING.",
         "required_points": [
-
+          "HEADING",
+          "TEXT",
+          "ENDING"
+        ]
+      },
+      {
+        "id": "formal_message_q2",
+        "prompt": "Say the proword that marks the end of the HEADING and the end of the TEXT.",
+        "answer": "BREAK.",
+        "required_points": [
+          "BREAK"
+        ]
+      },
+      {
+        "id": "formal_message_q3",
+        "prompt": "List all precedence categories for Formal Messages.",
+        "answer": "FLASH, IMMEDIATE, PRIORITY, ROUTINE.",
+        "required_points": [
+          "FLASH",
+          "IMMEDIATE",
+          "PRIORITY",
+          "ROUTINE"
         ]
       }
     ]
@@ -142,11 +212,27 @@
     "title": "Cancellation",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "cancellation_q1",
+        "prompt": "Say the proword used to cancel a message.",
+        "answer": "CANCEL.",
         "required_points": [
-
+          "CANCEL"
+        ]
+      },
+      {
+        "id": "cancellation_q2",
+        "prompt": "Cancel during transmission: callsign 10 to 00. Say the full line.",
+        "answer": "HULLO 00, this is 10, enemy tanks spotted at GRID ABCD CANCEL OVER.",
+        "required_points": [
+          "HULLO 00, this is 10, enemy tanks spotted at GRID ABCD CANCEL OVER."
+        ]
+      },
+      {
+        "id": "cancellation_q3",
+        "prompt": "Cancel after transmission: callsign 10 to 00. Say the full line.",
+        "answer": "HULLO 00, this is 10, reference message enemy tanks CANCEL OVER.",
+        "required_points": [
+          "HULLO 00, this is 10, reference message enemy tanks CANCEL OVER."
         ]
       }
     ]
@@ -155,11 +241,27 @@
     "title": "Correction",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "correction_q1",
+        "prompt": "Say the proword used to correct a mistake.",
+        "answer": "WRONG.",
         "required_points": [
-
+          "WRONG"
+        ]
+      },
+      {
+        "id": "correction_q2",
+        "prompt": "Correct during transmission: callsign 10 to 00. Say the full line.",
+        "answer": "HULLO 00, this is 10, enemy tanks spotted at GRID ABBD, WRONG GRID ABCD, OVER.",
+        "required_points": [
+          "HULLO 00, this is 10, enemy tanks spotted at GRID ABBD, WRONG GRID ABCD, OVER."
+        ]
+      },
+      {
+        "id": "correction_q3",
+        "prompt": "Correct after transmission: callsign 10 to 00. Say the full line.",
+        "answer": "HULLO 00, this is 10, reference my message on enemy tanks WRONG GRID ABCD OVER.",
+        "required_points": [
+          "HULLO 00, this is 10, reference my message on enemy tanks WRONG GRID ABCD OVER."
         ]
       }
     ]
@@ -168,11 +270,27 @@
     "title": "Verify",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "verify_q1",
+        "prompt": "Say the proword used to request verification.",
+        "answer": "VERIFY.",
         "required_points": [
-
+          "VERIFY"
+        ]
+      },
+      {
+        "id": "verify_q2",
+        "prompt": "Verify during transmission: callsign 00 asks to verify GRID ABCD. Say the full line.",
+        "answer": "00, VERIFY GRID ABCD OVER.",
+        "required_points": [
+          "00, VERIFY GRID ABCD OVER."
+        ]
+      },
+      {
+        "id": "verify_q3",
+        "prompt": "Say the proword used to confirm quoted words are correct.",
+        "answer": "CORRECT.",
+        "required_points": [
+          "CORRECT"
         ]
       }
     ]
@@ -181,11 +299,28 @@
     "title": "Repetition",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "repetition_q1",
+        "prompt": "Say the proword used to repeat the last transmission.",
+        "answer": "SAY AGAIN.",
         "required_points": [
-
+          "SAY AGAIN"
+        ]
+      },
+      {
+        "id": "repetition_q2",
+        "prompt": "Say the proword used to repeat the word after a specific word.",
+        "answer": "SAY AGAIN WORD AFTER.",
+        "required_points": [
+          "SAY AGAIN WORD AFTER"
+        ]
+      },
+      {
+        "id": "repetition_q3",
+        "prompt": "Say the proword used to repeat from one word to another.",
+        "answer": "SAY AGAIN FROM... TO....",
+        "required_points": [
+          "SAY AGAIN FROM",
+          "TO"
         ]
       }
     ]
@@ -194,11 +329,27 @@
     "title": "Acknowledge",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "acknowledge_q1",
+        "prompt": "Say the proword used to request acknowledgement.",
+        "answer": "ACKNOWLEDGE.",
         "required_points": [
-
+          "ACKNOWLEDGE"
+        ]
+      },
+      {
+        "id": "acknowledge_q2",
+        "prompt": "Say the proword used when no response is received.",
+        "answer": "NOTHING HEARD OUT.",
+        "required_points": [
+          "NOTHING HEARD OUT"
+        ]
+      },
+      {
+        "id": "acknowledge_q3",
+        "prompt": "Request acknowledgement for a prior message: callsign 10 to 30. Say the full line.",
+        "answer": "HULLO 30, this is 10, reference my message to callsign 20, ACKNOWLEDGE OVER.",
+        "required_points": [
+          "HULLO 30, this is 10, reference my message to callsign 20, ACKNOWLEDGE OVER."
         ]
       }
     ]
@@ -207,11 +358,27 @@
     "title": "Relay",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "relay_q1",
+        "prompt": "Say the proword used to indicate you will relay through yourself.",
+        "answer": "THROUGH ME.",
         "required_points": [
-
+          "THROUGH ME"
+        ]
+      },
+      {
+        "id": "relay_q2",
+        "prompt": "Say the proword used to tell another station to relay to a third station.",
+        "answer": "RELAY TO.",
+        "required_points": [
+          "RELAY TO"
+        ]
+      },
+      {
+        "id": "relay_q3",
+        "prompt": "Say the proword used by the relay station to confirm the message is delivered.",
+        "answer": "MESSAGE PASSED.",
+        "required_points": [
+          "MESSAGE PASSED"
         ]
       }
     ]
@@ -220,11 +387,27 @@
     "title": "Unknown Station",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "unknown_station_q1",
+        "prompt": "Say the proword used to address an unknown station.",
+        "answer": "UNKNOWN STATION.",
         "required_points": [
-
+          "UNKNOWN STATION"
+        ]
+      },
+      {
+        "id": "unknown_station_q2",
+        "prompt": "Say the proword used to request a callsign.",
+        "answer": "SAY AGAIN CALLSIGN.",
+        "required_points": [
+          "SAY AGAIN CALLSIGN"
+        ]
+      },
+      {
+        "id": "unknown_station_q3",
+        "prompt": "Handle an unknown station: callsign 00 replies. Say the full line.",
+        "answer": "UNKNOWN STATION, this is 00, SAY AGAIN CALLSIGN, OVER.",
+        "required_points": [
+          "UNKNOWN STATION, this is 00, SAY AGAIN CALLSIGN, OVER."
         ]
       }
     ]
@@ -233,11 +416,27 @@
     "title": "NO DUFF",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "no_duff_q1",
+        "prompt": "Say the proword used for a genuine urgent message during an exercise.",
+        "answer": "NO DUFF.",
         "required_points": [
-
+          "NO DUFF"
+        ]
+      },
+      {
+        "id": "no_duff_q2",
+        "prompt": "Start a NO DUFF message: callsign 10 to 00. Say the full line.",
+        "answer": "HULLO 00, this is 10, NO DUFF MESSAGE, OVER.",
+        "required_points": [
+          "HULLO 00, this is 10, NO DUFF MESSAGE, OVER."
+        ]
+      },
+      {
+        "id": "no_duff_q3",
+        "prompt": "What words are not to be encrypted when using this proword?",
+        "answer": "NO DUFF.",
+        "required_points": [
+          "NO DUFF"
         ]
       }
     ]
@@ -246,11 +445,27 @@
     "title": "Nicknames and Authentication",
     "questions": [
       {
-        "id": "",
-        "prompt": "",
-        "answer": "",
+        "id": "nicknames_authentication_q1",
+        "prompt": "Say the proword used to challenge for authentication.",
+        "answer": "AUTHENTICATE.",
         "required_points": [
-
+          "AUTHENTICATE"
+        ]
+      },
+      {
+        "id": "nicknames_authentication_q2",
+        "prompt": "Say the proword used to reply to an authentication challenge.",
+        "answer": "I AUTHENTICATE.",
+        "required_points": [
+          "I AUTHENTICATE"
+        ]
+      },
+      {
+        "id": "nicknames_authentication_q3",
+        "prompt": "Say the proword used when the authentication is wrong.",
+        "answer": "WRONG OUT.",
+        "required_points": [
+          "WRONG OUT"
         ]
       }
     ]
