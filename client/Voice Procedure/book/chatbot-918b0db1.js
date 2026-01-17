@@ -67,6 +67,7 @@
     widget.id = "vpbot-quiz";
     widget.innerHTML = `
       <div class="vpbot-header">
+        <button type="button" class="vpbot-toggle" aria-expanded="true" aria-label="Minimize quiz">-</button>
         <div class="vpbot-title">VPbot Quiz</div>
         <div class="vpbot-subtitle">Select a question to begin</div>
       </div>
@@ -95,12 +96,14 @@
     const micButton = form.querySelector(".vpbot-mic-btn");
     const statusEl = widget.querySelector(".vpbot-status");
     const subtitleEl = widget.querySelector(".vpbot-subtitle");
+    const toggleButton = widget.querySelector(".vpbot-toggle");
 
     let currentQuestion = null;
     let isBusy = false;
     let isListening = false;
     let recognition = null;
     let lastTranscript = "";
+    let isMinimized = false;
 
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -142,6 +145,23 @@
       subtitleEl.textContent = "Select a question, then enter your answer.";
     }
     chatEl.textContent = "";
+
+    function setMinimized(nextValue) {
+      isMinimized = nextValue;
+      widget.classList.toggle("vpbot-minimized", isMinimized);
+      if (toggleButton) {
+        toggleButton.setAttribute("aria-expanded", String(!isMinimized));
+        toggleButton.textContent = isMinimized ? "+" : "-";
+        toggleButton.setAttribute(
+          "aria-label",
+          isMinimized ? "Maximize quiz" : "Minimize quiz"
+        );
+        toggleButton.setAttribute(
+          "title",
+          isMinimized ? "Maximize quiz" : "Minimize quiz"
+        );
+      }
+    }
 
     function setMicState(listening) {
       isListening = listening;
@@ -267,6 +287,12 @@
         recognition.start();
       }
     });
+
+    if (toggleButton) {
+      toggleButton.addEventListener("click", () => {
+        setMinimized(!isMinimized);
+      });
+    }
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();

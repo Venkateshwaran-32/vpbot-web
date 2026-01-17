@@ -25,6 +25,7 @@
   background: linear-gradient(135deg, #2e3a20, #3a4a24);
   color: #f4f3ea;
   border-bottom: 1px solid #4c5a30;
+  position: relative;
 }
 
 #vpbot-quiz .vpbot-title {
@@ -37,6 +38,22 @@
 #vpbot-quiz .vpbot-subtitle {
   font-size: 12px;
   opacity: 0.8;
+}
+
+#vpbot-quiz .vpbot-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #c7c3a9;
+  border-radius: 6px;
+  background: #f4f3ea;
+  color: #2e3a20;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
 }
 
 #vpbot-quiz .vpbot-body {
@@ -160,6 +177,18 @@
   padding: 0 12px 10px;
   font-size: 11px;
   color: #4b5a2f;
+}
+
+#vpbot-quiz.vpbot-minimized .vpbot-body,
+#vpbot-quiz.vpbot-minimized .vpbot-input,
+#vpbot-quiz.vpbot-minimized .vpbot-status,
+#vpbot-quiz.vpbot-minimized .vpbot-subtitle {
+  display: none;
+}
+
+#vpbot-quiz.vpbot-minimized .vpbot-header {
+  border-bottom: none;
+  padding-bottom: 12px;
 }
 
 @media (max-width: 640px) {

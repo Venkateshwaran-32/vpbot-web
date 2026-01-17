@@ -118,7 +118,7 @@ app.post("/api/verify", async (request, response) => {
             "REQUIRED_POINTS:",
             requiredPointsText,
             "",
-            "USER_ANSWER:",
+            "USER_ANSWER:",   
             userAnswer,
         ].join("\n");
 
