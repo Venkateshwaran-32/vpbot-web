@@ -56,6 +56,77 @@
   cursor: pointer;
 }
 
+#vpbot-quiz .vpbot-audio-toggle {
+  position: absolute;
+  top: 8px;
+  right: 38px;
+  border: 1px solid #c7c3a9;
+  border-radius: 6px;
+  background: #f4f3ea;
+  color: #2e3a20;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+#vpbot-quiz .vpbot-mic-indicator {
+  position: absolute;
+  top: 8px;
+  right: 126px;
+  border: 1px solid #c7c3a9;
+  border-radius: 999px;
+  background: #f4f3ea;
+  color: #2e3a20;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+  padding: 4px 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#vpbot-quiz .vpbot-mic-indicator svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+#vpbot-quiz .vpbot-mic-indicator .vpbot-mic-slash {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+
+#vpbot-quiz .vpbot-mic-indicator.on {
+  background: #1b3b1c;
+  color: #b6f2b8;
+  border-color: #1b3b1c;
+}
+
+#vpbot-quiz .vpbot-mic-indicator.off {
+  background: #3b1b1b;
+  color: #f2b6b6;
+  border-color: #3b1b1b;
+}
+
+#vpbot-quiz .vpbot-mic-indicator.on .vpbot-mic-slash {
+  display: none;
+}
+
+#vpbot-quiz .vpbot-mic-indicator.unavailable {
+  background: #e1dcc8;
+  color: #6b6b4b;
+}
+
+#vpbot-quiz .vpbot-audio-toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 #vpbot-quiz .vpbot-body {
   padding: 10px 12px;
   display: flex;

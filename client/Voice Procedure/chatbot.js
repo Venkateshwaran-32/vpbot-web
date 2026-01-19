@@ -1,4 +1,8 @@
 (function () {
+  const speechState = {
+    enabled: false,
+    supported: false,
+  };
   const VERIFY_API_URL =
     window.VPBOT_VERIFY_API_URL || "http://localhost:3000/api/verify";
   const QUESTIONS_FILE = "quiz_questions.json";
@@ -15,12 +19,29 @@
     return root + QUESTIONS_FILE;
   }
 
-  function addMessage(chatEl, role, text) {
+  function speakText(text) {
+    if (!speechState.enabled || !speechState.supported || !text) {
+      return;
+    }
+    const synth = window.speechSynthesis;
+    if (!synth) {
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    synth.speak(utterance);
+  }
+
+  function addMessage(chatEl, role, text, options = {}) {
     const msg = document.createElement("div");
     msg.className = `vpbot-msg ${role}`;
     msg.textContent = text;
     chatEl.appendChild(msg);
     chatEl.scrollTop = chatEl.scrollHeight;
+
+    if (role === "bot" && options.speak !== false) {
+      speakText(text);
+    }
   }
 
   function setStatus(statusEl, text) {
@@ -67,6 +88,13 @@
     widget.id = "vpbot-quiz";
     widget.innerHTML = `
       <div class="vpbot-header">
+        <div class="vpbot-mic-indicator off" aria-live="polite" aria-label="Mic off">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
+            <path class="vpbot-mic-slash" d="M4 4l16 16" />
+          </svg>
+        </div>
+        <button type="button" class="vpbot-audio-toggle" aria-pressed="false" aria-label="Toggle audio">Audio Off</button>
         <button type="button" class="vpbot-toggle" aria-expanded="true" aria-label="Minimize quiz">-</button>
         <div class="vpbot-title">VPbot Quiz</div>
         <div class="vpbot-subtitle">Select a question to begin</div>
@@ -97,6 +125,8 @@
     const statusEl = widget.querySelector(".vpbot-status");
     const subtitleEl = widget.querySelector(".vpbot-subtitle");
     const toggleButton = widget.querySelector(".vpbot-toggle");
+    const audioToggle = widget.querySelector(".vpbot-audio-toggle");
+    const micIndicator = widget.querySelector(".vpbot-mic-indicator");
 
     let currentQuestion = null;
     let isBusy = false;
@@ -108,6 +138,10 @@
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     const supportsSpeech = typeof SpeechRecognition === "function";
+    speechState.supported =
+      "speechSynthesis" in window &&
+      typeof window.SpeechSynthesisUtterance === "function";
+    speechState.enabled = speechState.supported;
 
     if (!questions.length) {
       addMessage(chatEl, "bot", "No quiz questions for this page yet.");
@@ -166,6 +200,15 @@
     function setMicState(listening) {
       isListening = listening;
       micButton.classList.toggle("listening", listening);
+      if (micIndicator) {
+        micIndicator.classList.toggle("on", listening);
+        micIndicator.classList.toggle("off", !listening);
+        micIndicator.classList.remove("unavailable");
+        micIndicator.setAttribute(
+          "aria-label",
+          listening ? "Mic on" : "Mic off"
+        );
+      }
     }
 
     async function sendAnswer(userAnswer) {
@@ -221,7 +264,7 @@
         );
       } finally {
         isBusy = false;
-        input.disabled = false;
+        // input.disabled = false;
         form.querySelector("button").disabled = false;
       micButton.disabled = !supportsSpeech;
       setStatus(statusEl, "");
@@ -270,8 +313,13 @@
       });
     } else {
       setStatus(statusEl, "Voice input not supported. Use the keyboard.");
-      input.disabled = false;
+      // input.disabled = false;
       form.querySelector("button").disabled = false;
+      if (micIndicator) {
+        micIndicator.classList.remove("on", "off");
+        micIndicator.classList.add("unavailable");
+        micIndicator.setAttribute("aria-label", "Mic unavailable");
+      }
     }
 
     micButton.addEventListener("click", () => {
@@ -291,6 +339,29 @@
     if (toggleButton) {
       toggleButton.addEventListener("click", () => {
         setMinimized(!isMinimized);
+      });
+    }
+
+    if (audioToggle) {
+      const updateAudioToggle = () => {
+        const label = speechState.enabled ? "Audio On" : "Audio Off";
+        audioToggle.textContent = label;
+        audioToggle.setAttribute("aria-pressed", String(speechState.enabled));
+        audioToggle.setAttribute(
+          "aria-label",
+          speechState.enabled ? "Disable audio" : "Enable audio"
+        );
+      };
+
+      audioToggle.disabled = !speechState.supported;
+      updateAudioToggle();
+
+      audioToggle.addEventListener("click", () => {
+        if (!speechState.supported) {
+          return;
+        }
+        speechState.enabled = !speechState.enabled;
+        updateAudioToggle();
       });
     }
 
