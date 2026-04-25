@@ -11,6 +11,24 @@ const model = await client.llm.model("google/gemma-3n-e4b");
 
 const app = express();
 const port = 3000;
+const backendToken = process.env.VPBOT_BACKEND_TOKEN?.trim();
+
+function requireBackendToken(request, response) {
+    if (!backendToken) {
+        response.status(500).json({
+            error: "VPBOT_BACKEND_TOKEN is not configured on the backend.",
+        });
+        return false;
+    }
+
+    const requestToken = request.get("x-vpbot-token")?.trim();
+    if (requestToken !== backendToken) {
+        response.status(401).json({ error: "Unauthorized" });
+        return false;
+    }
+
+    return true;
+}
 
 function parseModelJson(rawText) {
     if (!rawText) {
@@ -51,6 +69,10 @@ app.get("/", (request, response) => {
 // // ----- MAIN CHAT ENDPOINT (TEXT ONLY) -----
 app.post("/api/chat", async (request, response) => {
     try {
+        if (!requireBackendToken(request, response)) {
+            return;
+        }
+
         const userText = (request.body?.text || "").trim();
         const currentTopicId = request.body?.current_topic_id || "16";
         if (!userText) {
@@ -86,6 +108,10 @@ app.post("/api/chat", async (request, response) => {
 // ----- ANSWER VERIFICATION ENDPOINT -----
 app.post("/api/verify", async (request, response) => {
     try {
+        if (!requireBackendToken(request, response)) {
+            return;
+        }
+
         const question = (request.body?.question || "").trim();
         const answerKey =
             (request.body?.answer_key || request.body?.answerKey || "").trim();

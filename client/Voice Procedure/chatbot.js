@@ -4,7 +4,7 @@
     supported: false,
   };
   const VERIFY_API_URL =
-    window.VPBOT_VERIFY_API_URL || "http://localhost:3000/api/verify";
+    window.VPBOT_VERIFY_API_URL || "/.netlify/functions/verify";
   const QUESTIONS_FILE = "quiz_questions.json";
 
   function getPageId() {
