@@ -2,6 +2,38 @@
 
 This file tracks the changes made to prepare VPbot for GitHub-to-Netlify deployment.
 
+## Current Deployment Status
+
+- Netlify site is live at:
+
+```text
+https://vpbot.netlify.app/
+```
+
+- The deployed chatbot JavaScript was checked and is calling:
+
+```text
+/.netlify/functions/verify
+```
+
+- The deployed Netlify Function was checked and currently returns the expected setup error until Netlify environment variables are added:
+
+```text
+VPBOT_BACKEND_URL
+VPBOT_BACKEND_TOKEN
+```
+
+- `ngrok` has been installed locally.
+- LM Studio has been installed locally.
+- A local `server/.env` file has been created with `VPBOT_BACKEND_TOKEN`.
+- Remaining manual setup:
+  - complete LM Studio first-time setup
+  - download/load the Gemma model in LM Studio
+  - start the LM Studio local server
+  - add the ngrok account authtoken locally
+  - start `ngrok http 3000`
+  - add the ngrok URL and backend token to Netlify environment variables
+
 ## Netlify Hosting
 
 - Added `netlify.toml`.
